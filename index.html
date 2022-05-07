@@ -11,7 +11,7 @@
     <div class="content"></div>
     <script>
         fetch('./cut.html')
-        .then(response => document.querySelector('.content').innerHTML = response.html())
+        .then(response => document.querySelector('.content').innerHTML = response.text())
         .catch(console.log('can\'t fetch'))
     </script>
 </body>
