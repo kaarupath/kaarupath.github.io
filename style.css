@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'Harappa';
+    src: url("./Unicode/LiHarappaLipiUnicode-Regular.ttf");
+}
+
+@font-face {
+    font-family: Charulota;
+    src: url("./Unicode/Li-Saboj\ Charulota\ Unicode.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Harappa !important;
+    --c0: #96CCFA;
+    --c1: hsl(0, 0%, 76%);
+    --c2: #a6fa89;
+    --c3: #FAA2EE;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    height: 104px;
+    border-bottom: ridge grey 4px;
+    animation: colorchangeborderbottom 15s infinite;
+}
+
+@keyframes colorchangeborderbottom {
+    0% {
+        border-bottom: ridge var(--c0) 4px;
+    }
+    25% {
+        border-bottom: ridge var(--c1) 4px;
+    }
+    50% {
+        border-bottom: ridge var(--c2) 4px;
+    }
+    75% {
+        border-bottom: ridge var(--c3) 4px;
+    }
+    100% {
+        border-bottom: ridge var(--c0) 4px;
+    }
+}
+
+nav * {
+    height: 100px;
+    width: 20%;
+}
+
+.logo {
+    background-image: url('./logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    height: 100px;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.banner > * {
+    min-width: 400px;
+    min-height: 300px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+
+.banner p, .banner li {
+    width: max-content;
+}
+
+.banner-half {
+    background-image: url("./clothes-07.jpg");
+    background-position-y: 0;
+    background-size: 200px;
+    background-repeat: repeat;
+
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 2px;
+    font-size: 70px;
+    text-align: center;
+    width: 50%;
+    height: calc(100vh - 104px);
+    /* --shadow-shift: 2px;
+    text-shadow: pink var(--shadow-shift) var(--shadow-shift);
+    text-decoration-line: overline;*/
+    animation: swoopingup 3s linear infinite;
+    border: 50px solid white;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+@keyframes swoopingup {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: -200px;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    .banner-half {
+        width: 100vw;
+        min-height: 300px;
+    }
+    .banner {
+        flex-direction: column-reverse;
+    }
+}
+
+.banner-other-half {
+    font-size: 70px;
+    text-align: center;
+    width: 50% !important;
+    flex-direction: column;
+}
+
+.banner-other-half p {
+    padding: 10px;
+    border: 2px solid pink;
+    border-radius: 10px;
+    animation: colorchangeborder 15s infinite;
+    width: max-content;
+    margin: 10px;
+    background-color: white;
+    width: max-content;
+}
+
+.banner-other-half p:nth-child(even) {
+    animation: colorchangeborder 15s infinite reverse;
+}
+
+@keyframes colorchangeborder {
+    0% {
+        border: solid var(--c0) 2px;
+    }
+    25% {
+        border: solid var(--c1) 2px;
+    }
+    50% {
+        border: solid var(--c2) 2px;
+    }
+    75% {
+        border: solid var(--c3) 2px;
+    }
+    100% {
+        border: solid var(--c0) 2px;
+    }
+}
+
+.banner-other-half p:hover {
+    border: 1px solid black;
+    color: var(--c0);
+    transition-duration: 400ms;
+    animation: colorchangefont 5s reverse infinite;
+    cursor: pointer;
+}
+
+@keyframes colorchangefont {
+    0% {
+        color: var(--c0);
+    }
+    25% {
+        color: var(--c1);
+    }
+    50% {
+        color: var(--c2);
+    }
+    75% {
+        color: var(--c3)
+    }
+    100% {
+        color: var(--c0);
+    }
+}
+
+#lessons {
+    /* font-family: Charulota; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url("./school_FILL0_wght400_GRAD0_opsz48.svg");
+    background-repeat: repeat;
+}
+
+#lessons a {
+    width: 300px;
+    height: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    margin: 20px;
+    background-color: white;
+    transition-duration: 400ms;
+    cursor: pointer;
+}
+
+#lessons a:hover {
+    color: white;
+    border-color: black !important;
+}
+
+#lessons a p {
+    width: max-content;
+    max-width: 200px;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+}
+
+#lessons a:nth-child(4n+1) {
+    border-color: var(--c0);
+}
+
+#lessons a:nth-child(4n+1):hover {
+    background-color: var(--c0);
+}
+
+#lessons a:nth-child(4n+2) {
+    border-color: var(--c1);
+}
+
+#lessons a:nth-child(4n+2):hover {
+    background-color: var(--c1);
+}
+
+#lessons a:nth-child(4n+3) {
+    border-color: var(--c2);
+}
+
+#lessons a:nth-child(4n+3):hover {
+    background-color: var(--c2);
+}
+
+#lessons a:nth-child(4n) {
+    border-color: var(--c3);
+}
+
+#lessons a:nth-child(4n):hover {
+    background-color: var(--c3);
+}
+
+a {
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+
+a:hover {
+    color: inherit !important;
+}
+
+.youtube {
+    height: 300px;
+    font-size: 50px;
+    text-decoration: underline overline;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0;
+    color: #f00;
+    flex-wrap: wrap;
+    border-top: 10px solid #282828;
+    border-bottom: 10px solid #282828;
+}
+
+.youtube a {
+    transition-duration: 400ms;
+    margin: 0.1em;
+}
+
+.youtube a:hover {
+    transform: scale(1.1);
+}
+
+.youtube .youtube-logo {
+    width: 160px;
+    height: 160px;
+    background-image: url("./channels4_profile.jpg");
+    background-size: contain;
+    border-radius: 50%;
+    border: 5px double #282828;
+}
+
+@media only screen and (max-width:900px) {
+    .youtube {
+        height: 500px;
+        flex-direction: column;
+        font-size: 50px;
+    }
+}
+
+footer {
+    width: 100%;
+    font-size: 20px;
+    font-family: Charulota;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* .banner-carousel {
+    width: 50%;
+    height: calc(100vh - 104px);
+    font-size: 40px;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url("./school_FILL0_wght400_GRAD0_opsz48.svg");
+    background-color: gainsboro !important;
+    animation: backswaplearn 10s 2s infinite;
+    
+}
+
+@keyframes backswaplearn {
+    0% {
+        background-image: url("./school_FILL0_wght400_GRAD0_opsz48.svg");
+    }
+    50% {
+        background-image: url("./videocam_FILL0_wght400_GRAD0_opsz48.svg");
+    }
+    100% {
+        background-image: url("./school_FILL0_wght400_GRAD0_opsz48.svg");
+    }
+}
+
+.banner-carousel div {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.banner-carousel p, .banner-carousel li {
+    padding: 10px;
+    border: 2px solid pink;
+    border-radius: 10px;
+    animation: colorchangeborder 5s infinite;
+    width: max-content;
+    margin: 10px;
+    background-color: white;
+}
+
+.banner-carousel p:hover, .banner-carousel li:hover {
+    border: 1px solid black;
+    color: var(--c0);
+    transition-duration: 400ms;
+    animation: colorchangefont 5s reverse infinite;
+}
+
+
+
+@media only screen and (max-width: 799px) {
+    .banner-half {
+        width: 100vw;
+        min-height: 300px;
+    }
+    .banner-carousel {
+        width: 100vw;
+        min-height: 300px;
+    }
+}
+
+.banner-carousel .carousel-item div, .banner-carousel .carousel-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@keyframes colorchangetextshadow {
+    0% {
+        text-shadow: pink var(--shadow-shift) var(--shadow-shift);
+    }
+    25% {
+        text-shadow: grey var(--shadow-shift) var(--shadow-shift);
+    }
+    50% {
+        text-shadow: blueviolet var(--shadow-shift) var(--shadow-shift);
+    }
+    75% {
+        text-shadow: greenyellow var(--shadow-shift) var(--shadow-shift);
+    }
+    100% {
+        text-shadow: pink var(--shadow-shift) var(--shadow-shift);
+    }
+}
+
+*/
