@@ -122,6 +122,17 @@ nav * {
     }
 }
 
+@media only screen and (max-width:500px) {
+    .banner-half {
+        border: 10px solid white;
+    }
+    .banner-other-half p {
+        margin: 0;
+        max-width: 95vw;
+        
+    }
+}
+
 .banner-other-half {
     font-size: 70px;
     text-align: center;
