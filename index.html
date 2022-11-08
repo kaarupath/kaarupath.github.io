@@ -1,12 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>কারুপাঠ</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./bootstrap.min.js"></script>
 </head>
+
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sb9Z1GAIwAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <nav>
+        <div class="logo"></div>
+        <div class="gap"></div>
+    </nav>
+    <div class="banner">
+        <div class="banner-other-half container-lg" id="learn">
+            <p><a href="#lessons">শেখা শুরু করুন</a></p>
+        </div>
+        <div class="banner-half">পোশাক তৈরির<br>স্কুল</div>
+    </div>
+    <div id="lessons">
+        <!-- <a href="#learn">
+            <p href="#">সব পেশাক তৈরিতে প্রাসঙ্গিক</p>
+        </a>
+        <a href="#learn">
+            <p>কামিজ</p>
+        </a>
+        <a href="#learn">
+            <p>হিজাব</p>
+        </a>
+        <a href="#learn">
+            <p>ব্লাউজ</p>
+        </a>
+        <a href="#learn">
+            <p>ফতুয়া</p>
+        </a>
+        <a href="#learn">
+            <p>টপস্</p>
+        </a>
+        <a href="#learn">
+            <p>আরও</p>
+        </a>
+        <a href="#learn">
+            <p>জাতীয় পতাকা</p>
+        </a>
+        <a href="#learn">
+            <p>কাপড়ের ফুল</p>
+        </a> -->
+    </div>
+    <div class="youtube">
+        <a href="https://www.youtube.com/channel/UCmGFHuiA8YqvoW-hmO64t2w">ইউটিউব চ্যানেল সাবস্ক্রাইব করুন</a>
+        <a href="https://www.youtube.com/channel/UCmGFHuiA8YqvoW-hmO64t2w" class="youtube-logo">
+
+        </a>
+    </div>
+    <footer>
+        কারুপাঠ পোশাক তৈরি প্রশিক্ষণ কেন্দ্র &copy;২০২২
+    </footer>
+    <script>
+        class Video {
+            constructor (title, id, lessons) {
+                this.title = title
+                this.id = id
+                this.lessons = lessons
+            }
+        }
+        class Lesson {
+            constructor (title, videos, lessons) {
+                this.title = title
+                this.videos = videos
+            }
+        }
+        let সব = "সব পেশাক তৈরিতে প্রাসঙ্গিক"
+        let কামিজ = "কামিজ"
+        let হিজাব = "হিজাব"
+        let ব্লাউজ = "ব্লাউজ"
+        let ফতুয়া = "ফতুয়া"
+        let জামা = "জামা"
+        let টপস্ = "টপস্"
+        let প্যান্ট = "প্যান্ট"
+        let পাজামা = "পাজামা"
+        let পালাজ্জো = "পালাজ্জো"
+        let নবজাতক = "নবজাতকের জন্য"
+        let ফুল = "কাপড়ের ফুল"
+        let কোটি = "কোটি"
+        let নিমা = "নিমা"
+        let পেটিকোট = "পেটিকোট"
+        let ফ্রক = "ফ্রক"
+        let টুপি = "টুপি"
+        let পতাকা = "জাতীয় পতাকা"
+        let lessons = [
+            সব,
+            কামিজ,
+            হিজাব,
+            ব্লাউজ,
+            ফতুয়া,
+            জামা,
+            টপস্,
+            প্যান্ট,
+            পাজামা,
+            পালাজ্জো,
+            নবজাতক,
+            ফুল,
+            কোটি,
+            নিমা,
+            পেটিকোট,
+            ফ্রক,
+            টুপি,
+            পতাকা
+        ]
+
+        let videos = [
+            new Video("বেবী পাজামা তৈরি", "jDdWymQdHYI", [নবজাতক]),
+            new Video("বেবী কামিজ তৈরি - ২", "rEVepmhmQrQ", [নবজাতক]),
+            new Video("বেবী কামিজ তৈরি - ১", "fFv2L5EqL38", [নবজাতক]),
+            new Video("ফ্রি সাইজ কোটি তৈরি", "e_SF-OHSqZQ", [কোটি]),
+            new Video("নবজাতকের জামা তৈরি", "U9-jmije3MM", [নবজাতক]),
+            new Video("ফতুয়ার বেন কলার লাগানো", "3KQEvyvqafk", [ফতুয়া]),
+            new Video("ছেলেদের ফতুয়া সেলাই", "lBKOBfXNd1g", [ফতুয়া]),
+            new Video("ফতুয়ার বোতাম পটি সেলাই", "_ROmujdNuIc", [ফতুয়া]),
+            new Video("প্রমাণ সাইজ পুরুষ ফতুয়া কাটিং", "ov4-lLTRqac", [ফতুয়া]),
+            new Video("গোল গলা হাফ কলার", "B1grBBA28Hc", [ফতুয়া]),
+            new Video("জামার ঘের টাইপিং সেলাই", "d3Bg09nIVZA", [জামা]),
+            new Video("পোশাকে ঘেরের ডিজাইন", "Ra1T1exFWd4", [সব]),
+            new Video("হাফ কলার গলা", "SBUCc4fklNc", [ফতুয়া, জামা]),
+            new Video("রাবার সেলাই", "m3b6rY4xBJo", [পাজামা]),
+            new Video("পালাজ্জো সেলাই", "WrbvjfdiQKg", [পালাজ্জো]),
+            new Video("V নেক সেলাই", "RdJ7fXegzmg", [কামিজ, জামা]),
+            new Video("লেডিজ কোটি সেলাই", "doDQdnhlOtg", [কোটি]),
+            new Video("প্রমাণ সাইজ কোটি কাটিং হিসাব", "jhiZz_6fvco", [কোটি]),
+            new Video("কলি জোড়া সহ সালোয়ার সেলাই", "peefGy0TXwU", [কামিজ]),
+            new Video("সাধারণ টপ সেলাই", "bQTKlmbk_IQ", [টপস্]),
+            new Video("সাধারণ টপ কাটিং", "E0BUQwPkc4Q", [টপস্]),
+            new Video("প্যান্ট পাজামা সেলাই করার নিয়ম", "1qkDp9UN9VI", [প্যান্ট, পালাজ্জো]),
+            new Video("ফ্রকের আপার পার্ট সেলাই", "wRmp5W96_tY", [ফ্রক]),
+            new Video("ফ্রকের আপার পার্ট কাটিং", "FXRx5g8dMak", [ফ্রক]),
+            new Video("ডিভাইডার সালোয়ার কাটার নিয়ম", "FzejYX8yyeM", [কামিজ]),
+            new Video("ডিভাইডার পাজামা কাটা", "sFHXa06XCeg", [কামিজ]),
+            new Video("সাধারণ দশ টেকিন ব্লাউজ কাটিং", "hc9o6jVPMCc", [ব্লাউজ]),
+            new Video("৩৪ সাইজ ব্লাউজ কাটিং হিসাব", "ZUTGVH19IGs", [ব্লাউজ]),
+            new Video("কামিজ মার্কিং হিসাব", "szBUvXQ-V5M", [কামিজ]),
+            new Video("কুচি নিমা কিভাবে বানাবেন", "kYVTsDMw0Ws", [নিমা]),
+            new Video("কুচি পেটিকোট কাটিং", "qUpBPGnH9_U", [পেটিকোট]),
+            new Video("মেয়েদের ঘটি প্যান্ট কাটিং", "jam2o2SyDvk", [প্যান্ট]),
+            new Video("সালোয়ার বা পাজামায় কলি কাটিং", "lj1vqSWKsh4", [কামিজ, পাজামা]),
+            new Video("কাবলি সালোয়ার কাটিং", "x5MPup4Pwpk", [কামিজ]),
+            new Video("ছয় কলি পেটিকোট কাটিং", "ziX1mV8Hi-4", [পেটিকোট]),
+            new Video("সাধারন প্যান্ট পাজামা কাটিং", "M77oJGYuwNQ", [প্যান্ট, পাজামা]),
+            new Video("কাপড়ের ফুল তৈরি - ১", "G3U7PtfDSOQ", [ফুল]),
+            new Video("কাপড়ের ফুল তৈরি - ২", "eUy_RmKpETk", [ফুল]),
+            new Video("কাপড়ের ফুল তৈরি - ৩", "gUjxR40eOSY", [ফুল]),
+            new Video("কাপড়ের ফুল তৈরি - ৪", "_UBLOBWPcz8", [ফুল]),
+            new Video("কাপড়ের ফুল তৈরি - ৫", "eXnFF1AxU2c", [ফুল]),
+            new Video("বয়স অনুযায়ী জামা তৈরীর হিসাব", "9NC0dwkD3Ps", [জামা, সব]),
+            new Video("রাউন্ড টপস্ সানফ্লাওয়ার কলার মার্কিং", "3mYxTkYBs-g", [টপস্]),
+            new Video("রাউন্ড টপস্ কাটিং", "J6b1X5Ew8hc", [টপস্]),
+            new Video("টপস্ সেলাই", "wTA7mqdAXa0", [টপস্]),
+            new Video("হিজাব সেলাই", "Z8jRyQW527w", [হিজাব]),
+            new Video("হিজাবের কাটিং হিসাব", "XJer4-3GILg", [হিজাব]),
+            new Video("জামা তৈরীর জন্য গলা ছড়ানো নেবার হিসাব", "ku89CwxAN0g", [জামা]),
+            new Video("গোল জামা তৈরি - ১", "C4X2-SMam0Q", [জামা]),
+            new Video("গোল জামা তৈরি - ২", "8nKpXzy6QIs", [জামা]),
+            new Video("বোতাম ঘর তৈরি", "hM37_mvbb-0", [সব, জামা, ফতুয়া, কামিজ, কোটি]),
+            new Video("কামিজ কাটিং", "NXxs3wNLzEE", [কামিজ]),
+            new Video("সাধারণ পালাজ্জো", "Id-pxU0A02Y", [পালাজ্জো]),
+            new Video("পাজামার কাপড় কাটা", "AXWzDQaU26M", [পাজামা]),
+            new Video("পাজামায় ইলাস্টিক লাগানো - ১", "2k764CYela4", [পাজামা]),
+            new Video("পাজামায় ইলাস্টিক লাগানো - ২", "33t7_2XwaqA", [পাজামা]),
+            new Video("আস্তর ব্লাউজ তৈরি", "uechnKFGuW4", [ব্লাউজ]),
+            new Video("জামার প্লাকেট তৈরি", "fSqGBA3CEx8", [জামা]),
+            new Video("কামিজের সাইড সেলাই", "-orz7QupMQM", [কামিজ]),
+            new Video("কোমর পার্টের সাথে কুঁচি পার্ট সেলাই", "_fZK8WXYN0I", [ফ্রক]),
+            new Video("শরীরের মাপ নেওয়া", "w4GfvgbLpk8", [সব]),
+            new Video("বেবি-প্যান্ট তৈরি", "SD-gWzE9_JY", [প্যান্ট]),
+            new Video("চলতি হিসাব", "U4B-KF4siIQ", [সব]),
+            new Video("জাতীয় পতাকা তৈরি", "IkHDfeMYle0", [পতাকা]),
+            new Video("টুপি তৈরি", "TZQLPXjP4Pg", [টুপি]),
+            new Video("দৈর্ঘের বিভিন্ন একক", "Bx86q5FaW3E", [সব])
+        ]
+        let banner = document.querySelector(".banner")
+        let school = document.querySelector(".banner-half")
+        let tv = document.querySelector(".banner-other-half")
+        let lessonString = ""
+        for (let lesson of lessons) {
+            lessonString += `\n<a href="#learn" name="${lesson}">\n    <p href="#">${lesson}</p>\n</a>`
+        }
+        let lessonElement = document.querySelector("#lessons")
+        lessonElement.innerHTML = lessonString
+        let lessonElements = document.querySelectorAll("#lessons a")
+        let i = 0
+        for (let lesson of lessonElements) {
+            lesson.addEventListener("click", () => {
+                banner.style.flexDirection = "column-reverse"
+                school.style.width = "100%"
+                lessonVideos = []
+                for (let video of videos) {
+                    if (video.lessons.includes(lesson.getAttribute("name"))) {
+                        lessonVideos.push(video)
+                    }
+                }
+                let tvString = ''
+                for (let video of lessonVideos) {
+                    tvString += `<p><a href="#learn" name="${video.title}" vidId="${video.id}">${video.title}</a></p>`
+                }
+                tv.innerHTML = tvString
+                tv.style.fontSize = "30px"
+                tv.style.width = "100%"
+                tv.scrollIntoView()
+                let lessonVideoElements = document.querySelectorAll("#learn a")
+                for (let video of lessonVideoElements) {
+                    video.addEventListener("click", () => {
+                        tv.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video.getAttribute("vidId")}"" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                        tv.scrollIntoView()
+                    })
+                }
+                // tv.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/jDdWymQdHYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                
+            })
+        }
+    </script>
 </body>
+
 </html>
